@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Login DBMS SAMFive</title>
+		<link rel="icon" href="images\icon.png" type="image/png">
+		<link rel="Stylesheet" 
+			  href="style.css" 
+			  type="text/css">
+		<script language="javascript">
+			
+			function checkInfo(){
+				var usr=/^[\w\u00E0\u00E8\u00EC\u00F2\u00F9]{2,15}$/i;  // \à\è\ì\ò\ù\
+				var psw=/^.{6,20}$/;
+				
+				var user=login.username.value;
+				var passw=login.password.value;
+				
+				if(!usr.test(user)){
+					alert("Formato username errato.");
+					return false;
+				}
+				
+				if(!psw.test(passw)){
+					alert("La password deve essere lunga almeno 6 caratteri.");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body background="images/tecnologia-a.jpg" class="bodycss">
+		<a href="index.php"><img src="images\logo_2.png" align="right" height="100" width="220"></a>
+		
+		<table align="center">
+			<th><img src="images\nome.png" align="center"></th>
+			<tr>
+				<td>
+					<br><br>
+					<img src="images\login.png" align="center">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<br><br>
+					<form name="login" method="POST" onSubmit="return checkInfo();" action="login.php" align="center">
+						<p class="plogin">Username&nbsp;<input type="text" name="username"><br><br></p>
+						<p class="plogin">Password&nbsp;<input type="password" name="password"><br><br></p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" value="Accedi">&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset"><br><br>
+						Non sei registrato? <a href="registrazione.html">Registrati</a>!
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

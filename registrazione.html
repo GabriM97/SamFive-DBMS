@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<title>Registrazione DBMS SAMFive</title>
+		<link rel="icon" href="images\icon.png" type="image/png">
+		<link rel="Stylesheet" 
+			  href="style.css" 
+			  type="text/css">
+		<script language="javascript">
+			
+			function checkInfo(){
+				var str=/^[a-zA-Z\u00E0\u00E8\u00EC\u00F2\u00F9\u0027\u0020]+$/i; 	// \à\è\ì\ò\ù\'\spazio
+				var eml=/^.+@[a-zA-Z]+\.[a-zA-Z]{2,4}/i;
+				var usr=/^[\w\u00E0\u00E8\u00EC\u00F2\u00F9]{2,15}$/i;  // \à\è\ì\ò\ù\
+				var psw=/^.{6,30}$/;
+				
+				var nome=registr.nome.value;
+				var cogn=registr.cognome.value;
+				var email=registr.email.value;
+				var user=registr.username.value;
+				var passw=registr.password.value;
+				
+				
+				if(!str.test(nome)){
+					alert("Formato nome errato.");
+					return false;
+				}
+				
+				if(!str.test(cogn)){
+					alert("Formato cognome errato.");
+					return false;
+				}
+				
+				if(!eml.test(email)){
+					alert("Formato email errato.");
+					return false;
+				}
+				
+				if(!usr.test(user)){
+					alert("Formato username errato.");
+					return false;
+				}
+				
+				if(!psw.test(passw)){
+					alert("La password deve essere lunga almeno 6 caratteri.");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	
+	<body background="images/tecnologia-a.jpg" class="bodycss">
+		<a href="index.php"><img src="images\logo_2.png" align="right" height="100" width="220"></a>
+		
+		<table align="center">
+			<th><img src="images\nome.png" align="center"></th>
+			<tr>
+				<td>
+					<br><br>
+					<img src="images\registrazione.png" align="center">
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<br><br>
+					<form name="registr" method="POST" onSubmit="return checkInfo();" action="registrazione.php" align="center">
+						<p class="pregistr">Nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="nome"><br><br></p>
+						<p class="pregistr">Cognome&nbsp;&nbsp;<input type="text" name="cognome"><br><br></p>
+						<p class="pregistr">E-mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email"><br><br></p>
+						<p class="pregistr">Username&nbsp;<input type="text" name="username"><br><br></p>
+						<p class="pregistr">Password&nbsp;&nbsp;<input type="password" name="password"><br><br></p>
+						<p class="pregistr">Privilegi account&nbsp;<input type="text" name="privilegi" value="1" size="4" readonly>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br></p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" name="btn_regist"value="Registrati">&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset"><br><br>
+						Sei già registrato? Effettua il <a href="login.html">login</a>.
+					</form>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+
+		
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
